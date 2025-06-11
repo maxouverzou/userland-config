@@ -31,6 +31,7 @@
     # ^ these should be used directly within patched desktop entries?
     # ^ not needed at the moment; does not work on darwin
 
+    cfn-normalizer
     fedit
     frbi # interactive git rebase
     hvd # homemanager diff tool

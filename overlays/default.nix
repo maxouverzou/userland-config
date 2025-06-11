@@ -1,5 +1,6 @@
 self: super: {
   cbr2cbz = super.callPackage ../packages/cbr2cbz.nix { };
+  cfn-normalizer = super.callPackage ../packages/cfn-normalize.nix { };
   fedit = super.callPackage ../packages/fedit.nix { };
   frbi = super.callPackage ../packages/frbi.nix { };
   gpx-reduce = super.callPackage ../packages/gpx-reduce.nix { };
