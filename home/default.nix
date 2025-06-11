@@ -30,10 +30,12 @@
     # nixgl.nixVulkanIntel
     # ^ these should be used directly within patched desktop entries?
     # ^ not needed at the moment; does not work on darwin
-    
+
     fedit
     frbi # interactive git rebase
     hvd # homemanager diff tool
+    json2yaml
+    yaml2json
 
     _1password-cli
     _1password-gui
