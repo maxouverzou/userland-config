@@ -9,6 +9,5 @@
     cbr2cbz
     veracrypt
     yubikey-personalization
-    yubikey-personalization-gui
   ];
 }
