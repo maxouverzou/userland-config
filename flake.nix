@@ -9,6 +9,7 @@
     };
     nixgl.url = "github:nix-community/nixGL";
     stylix.url = "github:danth/stylix";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
   outputs =
@@ -17,6 +18,7 @@
       home-manager,
       nixgl,
       stylix,
+      nix-flatpak,
       ...
     }@inputs:
 
@@ -75,6 +77,7 @@
                   );
                   home.stateVersion = stateVersion;
                 }
+                nix-flatpak.homeManagerModules.nix-flatpak
                 stylix.homeModules.stylix
                 ./home
               ] ++ extraModules;
