@@ -86,7 +86,11 @@
         {
           homeConfigurations = {
             "maxou@gertry" = mkHome "maxou" "24.11";
-            "maxou@glados" = mkHomeExtra "maxou" "24.11" [ ./home/extra.nix ];
+            "maxou@glados" = mkHomeExtra "maxou" "24.11" [
+              {
+                home.graphical.enable = true;
+              }
+            ];
             "maxou@wheatley" = mkHome "maxou" "20.09";
             "maxverzier@mverzier-laptop-00495" = mkHome "maxverzier" "25.05";
           };
