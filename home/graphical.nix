@@ -15,7 +15,6 @@ in
   };
 
   config = mkIf cfg.enable {
-
     services.flatpak = {
       enable = pkgs.stdenv.isLinux;
       packages = [

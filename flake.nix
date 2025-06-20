@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixgl.url = "github:nix-community/nixGL";
-    stylix.url = "github:danth/stylix";
+    stylix.url = "github:nix-community/stylix";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 

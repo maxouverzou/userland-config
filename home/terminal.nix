@@ -6,17 +6,6 @@
 }:
 {
 
-  stylix = {
-    enable = true;
-    autoEnable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
-    targets = {
-      gtk.enable = false; # won't this interfere w/ kde?
-      kde.enable = false;
-      qt.enable = false;
-    };
-  };
-
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
