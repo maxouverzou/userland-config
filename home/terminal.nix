@@ -36,6 +36,7 @@
     file
     llm # access LLMs from the command-line
     ncdu # ncurses disk usage analyzer
+    nh # yet another nix helper
     nix-your-shell # fish/zsh support for nix-shell
     nixfmt-rfc-style
     parallel # TODO is rust-parallel ready?
