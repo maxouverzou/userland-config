@@ -12,7 +12,7 @@
     stylix = {
       enable = true;
       autoEnable = true;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
       targets = {
         gtk.enable = false; # won't this interfere w/ kde?
         kde.enable = false;
