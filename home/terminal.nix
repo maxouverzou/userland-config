@@ -1,6 +1,4 @@
 {
-  config,
-  lib,
   pkgs,
   ...
 }:
@@ -38,7 +36,9 @@
       llm # access LLMs from the command-line
       ncdu # ncurses disk usage analyzer
       nh # yet another nix helper
+      nil # nix language server
       nix-your-shell # fish/zsh support for nix-shell
+      nixd # nix language server
       nixfmt-rfc-style
       parallel # TODO is rust-parallel ready?
       pbzip2 # parallel bzip2
