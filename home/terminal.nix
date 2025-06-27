@@ -34,6 +34,7 @@
     dig # dns utils
     fd # alternative to find
     file
+    gnutar
     llm # access LLMs from the command-line
     ncdu # ncurses disk usage analyzer
     nh # yet another nix helper
@@ -46,6 +47,7 @@
     pv
     rclone # sync files & directories to/from cloud
     restic # backup program
+    rsync
     screen
     terminal-parrot
     tig # text-mode interface for git
