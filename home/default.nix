@@ -9,6 +9,11 @@
   ];
 
   config = {
+    nix.gc = {
+      automatic = true;
+      persistent = true;
+    };
+
     stylix = {
       enable = true;
       autoEnable = true;
