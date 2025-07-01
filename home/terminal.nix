@@ -27,12 +27,12 @@
 
       _1password-cli
       awscli2
-      btop # htop replacement
       devenv # declarative/reproducible developer environments
       dig # dns utils
       fd # alternative to find
       file
       gnutar
+      htop
       llm # access LLMs from the command-line
       ncdu # ncurses disk usage analyzer
       nh # yet another nix helper
