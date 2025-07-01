@@ -15,6 +15,16 @@ in
   };
 
   config = mkIf cfg.enable {
+
+    home.packages = with pkgs; [
+      _1password-gui
+      veracrypt
+    ];
+
+    stylix.fonts = {
+      monospace.package = pkgs.nerd-fonts.fira-code;
+    };
+
     services.flatpak = {
       enable = pkgs.stdenv.isLinux;
       packages = [
@@ -50,11 +60,6 @@ in
       enable = true;
       package = (config.lib.nixGL.wrap pkgs.mpv);
     };
-
-    home.packages = with pkgs; [
-      _1password-gui
-      veracrypt
-    ];
 
   };
 }
