@@ -142,6 +142,12 @@
       settings.git_protocol = "ssh";
     };
     programs.helix.enable = true;
+    programs.htop = {
+      enable = true;
+      settings = {
+        show_program_path = 1;
+      };
+    };
     programs.jq.enable = true;
     programs.jqp.enable = true;
     programs.tealdeer.enable = true;
