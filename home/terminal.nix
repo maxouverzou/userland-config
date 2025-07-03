@@ -52,6 +52,7 @@
       terminal-parrot
       tig # text-mode interface for git
       tmate # terminal sharing
+      unixtools.watch
       watchman
       whois
       xan # process csv files
