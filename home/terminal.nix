@@ -7,23 +7,20 @@
     # The home.packages option allows you to install Nix packages into your
     # environment.
     home.packages = with pkgs; [
-      # # It is sometimes useful to fine-tune packages, for example, by applying
-      # # overrides. You can do that directly here, just don't forget the
-      # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-      # # fonts?
-      # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-      # nixgl.nixGLIntel
-      # nixgl.nixVulkanIntel
-      # ^ these should be used directly within patched desktop entries?
-      # ^ not needed at the moment; does not work on darwin
-
+      # some custom packages
       cfn-normalizer
       fedit
       frbi # interactive git rebase
-      hvd # homemanager diff tool
       json2yaml
       yaml2json
+
+      # nix development packages
+      hwd # home-manager why-depends
+      nh # yet another nix helper
+      nil # nix language server
+      nix-your-shell # fish/zsh support for nix-shell
+      nixd # nix language server
+      nixfmt-rfc-style
 
       _1password-cli
       awscli2
@@ -35,11 +32,6 @@
       htop
       llm # access LLMs from the command-line
       ncdu # ncurses disk usage analyzer
-      nh # yet another nix helper
-      nil # nix language server
-      nix-your-shell # fish/zsh support for nix-shell
-      nixd # nix language server
-      nixfmt-rfc-style
       parallel # TODO is rust-parallel ready?
       pbzip2 # parallel bzip2
       pigz # parallel gzip
@@ -61,6 +53,11 @@
       # move these to a different category?
       cbr2cbz
       yubikey-personalization
+
+      # nixgl.nixGLIntel
+      # nixgl.nixVulkanIntel
+      # ^ these should be used directly within patched desktop entries?
+      # ^ not needed at the moment; does not work on darwin
     ];
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
