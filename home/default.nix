@@ -4,6 +4,7 @@
 }:
 {
   imports = [
+    ./programs
     ./terminal.nix
     ./graphical.nix
   ];

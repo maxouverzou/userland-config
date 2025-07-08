@@ -138,6 +138,7 @@
       enable = true;
       settings.git_protocol = "ssh";
     };
+    programs.glow.enable = true;
     programs.helix.enable = true;
     programs.htop = {
       enable = true;
