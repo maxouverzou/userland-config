@@ -3,9 +3,7 @@
 ```bash
 nh home switch ~/.config/home-manager
 
-nix-shell -p nh --run "nh home switch github:maxouverzou/userland-config"
-
-nix-shell -p home-manager --run "home-manager switch --flake github:maxouverzou/userland-config"
+nix-shell -p nh --run "nh home switch github:maxouverzou/userland-config -- --refresh"
 ```
 
 ## Troubleshooting
