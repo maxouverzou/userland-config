@@ -29,7 +29,6 @@
       fd # alternative to find
       file
       gnutar
-      htop
       llm # access LLMs from the command-line
       ncdu # ncurses disk usage analyzer
       parallel # TODO is rust-parallel ready?
