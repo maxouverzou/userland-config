@@ -49,7 +49,7 @@
       xan # process csv files
       xxd
 
-      # move these to a different category?
+      # TODO move these to a different category?
       cbr2cbz
       yubikey-personalization
 
@@ -83,6 +83,12 @@
     programs.home-manager.enable = true;
 
     programs.bat.enable = true;
+    programs.claude-code = {
+      # TODO move this to a different category
+      enable = true;
+      package = pkgs.claude-code-stable;
+    };
+
     programs.direnv = {
       enable = true;
       nix-direnv.enable = true;
