@@ -14,17 +14,11 @@
       json2yaml
       yaml2json
 
-      # nix development packages
-      hwd # home-manager why-depends
-      nh # yet another nix helper
-      nil # nix language server
+      # nix development packages hwd # home-manager why-depends nh # yet another nix helper nil # nix language server
       nix-your-shell # fish/zsh support for nix-shell
-      nixd # nix language server
-      nixfmt-rfc-style
+      nh # yet another nix helper
+      nvd
 
-      _1password-cli
-      awscli2
-      devenv # declarative/reproducible developer environments
       dig # dns utils
       fd # alternative to find
       file
@@ -83,11 +77,6 @@
     programs.home-manager.enable = true;
 
     programs.bat.enable = true;
-    programs.claude-code = {
-      # TODO move this to a different category
-      enable = true;
-      package = pkgs.claude-code-stable;
-    };
 
     programs.direnv = {
       enable = true;
@@ -160,7 +149,6 @@
     programs.ripgrep.enable = true;
     # use command-not-found instead?
     programs.nix-index.enable = true;
-    programs.lazygit.enable = true;
     programs.starship = {
       enable = true;
       settings = {

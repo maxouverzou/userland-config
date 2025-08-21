@@ -79,8 +79,10 @@
                 }
                 nix-flatpak.homeManagerModules.nix-flatpak
                 stylix.homeModules.stylix
-                ./home
-              ] ++ extraModules;
+                ./modules
+                ./defaults.nix
+              ]
+              ++ extraModules;
             };
         in
         {
@@ -88,11 +90,16 @@
             "maxou@gertry" = mkHome "maxou" "24.11";
             "maxou@glados" = mkHomeExtra "maxou" "24.11" [
               {
-                home.graphical.enable = true;
+                enableDevelopment = true;
+                enableGraphical = true;
               }
             ];
             "maxou@wheatley" = mkHome "maxou" "20.09";
-            "maxverzier@mverzier-laptop-00495" = mkHome "maxverzier" "25.05";
+            "maxverzier@mverzier-laptop-00495" = mkHomeExtra "maxverzier" "25.05" [
+              {
+                enableDevelopment = true;
+              }
+            ];
           };
         }
       );

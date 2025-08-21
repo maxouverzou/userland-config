@@ -3,12 +3,6 @@
   ...
 }:
 {
-  imports = [
-    ./programs
-    ./terminal.nix
-    ./graphical.nix
-  ];
-
   config = {
     nix.gc = {
       automatic = true;

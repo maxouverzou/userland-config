@@ -4,17 +4,18 @@
   pkgs,
   ...
 }:
-with lib;
 let
-  cfg = config.home.graphical;
+
+  inherit (lib)
+    mkEnableOption
+    mkIf
+    ;
 in
 {
 
-  options.home.graphical = {
-    enable = mkEnableOption "";
-  };
+  options.enableGraphical = mkEnableOption "";
 
-  config = mkIf cfg.enable {
+  config = mkIf config.enableGraphical {
 
     home.packages = with pkgs; [
       _1password-gui
