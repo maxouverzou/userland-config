@@ -24,7 +24,6 @@ in
     programs.awscli.enable = true;
 
     programs.claude-code = {
-      # TODO move this to a different category
       enable = true;
       package = pkgs.claude-code-stable;
     };

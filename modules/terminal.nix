@@ -168,11 +168,7 @@
       };
     };
     programs.yt-dlp.enable = true;
-    programs.zellij = {
-      enable = true;
-      enableFishIntegration = false;
-      settings.default_shell = "fish";
-    };
+    programs.zellij.enable = true;
     programs.zsh.enable = pkgs.stdenv.isDarwin;
 
     services.syncthing.enable = true;
