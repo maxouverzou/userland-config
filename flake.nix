@@ -65,40 +65,58 @@
         { pkgs }:
         let
           mkHome =
-            username: stateVersion: extraModules:
+            cfg:
             home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
               modules = [
-                {
-                  home.username = username;
-                  home.homeDirectory = nixpkgs.lib.mkDefault (
-                    if pkgs.stdenv.isDarwin then "/Users/${username}" else "/home/${username}"
-                  );
-                  home.stateVersion = stateVersion;
-                }
                 nix-flatpak.homeManagerModules.nix-flatpak
                 stylix.homeModules.stylix
                 ./modules
-                ./defaults.nix
-              ]
-              ++ extraModules;
+                {
+                  config = {
+                    nix.gc = {
+                      automatic = true;
+                      persistent = true;
+                    };
+                  };
+                }
+                cfg
+              ];
             };
         in
         {
           homeConfigurations = {
-            "maxou@gertry" = mkHome "maxou" "24.11" [ ];
-            "maxou@glados" = mkHome "maxou" "24.11" [
-              {
-                enableDevelopment = true;
-                enableGraphical = true;
-              }
-            ];
-            "maxou@wheatley" = mkHome "maxou" "20.09" [ ];
-            "maxverzier@mverzier-laptop-00495" = mkHome "maxverzier" "25.05" [
-              {
-                enableDevelopment = true;
-              }
-            ];
+            "maxou@gertry" = mkHome {
+              home = {
+                username = "maxou";
+                homeDirectory = "/home/maxou";
+                stateVersion = "24.11";
+              };
+            };
+            "maxou@glados" = mkHome {
+              home = {
+                username = "maxou";
+                homeDirectory = "/home/maxou";
+                stateVersion = "24.11";
+              };
+              enableDevelopment = true;
+              enableGraphical = true;
+            };
+            "maxou@wheatley" = mkHome {
+              home = {
+                username = "maxou";
+                homeDirectory = "/home/maxou";
+                stateVersion = "20.09";
+              };
+            };
+            "maxverzier@mverzier-laptop-00495" = mkHome {
+              home = {
+                username = "maxverzier";
+                homeDirectory = "/Users/maxverzier";
+                stateVersion = "25.05";
+              };
+              enableDevelopment = true;
+            };
           };
         }
       );

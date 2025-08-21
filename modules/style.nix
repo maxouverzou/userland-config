@@ -1,14 +1,23 @@
 {
+  lib,
+  config,
   pkgs,
   ...
 }:
+let
+  inherit (lib)
+    mkIf
+    mkOption
+    types
+    ;
+in
 {
-  config = {
-    nix.gc = {
-      automatic = true;
-      persistent = true;
-    };
+  options.enableStyle = mkOption {
+    type = types.bool;
+    default = true;
+  };
 
+  config = mkIf config.enableStyle {
     stylix = {
       enable = true;
       autoEnable = true;
