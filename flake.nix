@@ -64,8 +64,7 @@
       packages = forEachSupportedSystem (
         { pkgs }:
         let
-          mkHome = username: stateVersion: mkHomeExtra username stateVersion [ ];
-          mkHomeExtra =
+          mkHome =
             username: stateVersion: extraModules:
             home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
@@ -87,15 +86,15 @@
         in
         {
           homeConfigurations = {
-            "maxou@gertry" = mkHome "maxou" "24.11";
-            "maxou@glados" = mkHomeExtra "maxou" "24.11" [
+            "maxou@gertry" = mkHome "maxou" "24.11" [ ];
+            "maxou@glados" = mkHome "maxou" "24.11" [
               {
                 enableDevelopment = true;
                 enableGraphical = true;
               }
             ];
-            "maxou@wheatley" = mkHome "maxou" "20.09";
-            "maxverzier@mverzier-laptop-00495" = mkHomeExtra "maxverzier" "25.05" [
+            "maxou@wheatley" = mkHome "maxou" "20.09" [ ];
+            "maxverzier@mverzier-laptop-00495" = mkHome "maxverzier" "25.05" [
               {
                 enableDevelopment = true;
               }
