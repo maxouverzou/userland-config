@@ -142,7 +142,10 @@
     programs.htop = {
       enable = true;
       settings = {
-        show_program_path = 1;
+        highlight_base_name = 1;
+        shadow_other_users = 1;
+        show_program_path = 0;
+        tree_view = 1;
       };
     };
     programs.jq.enable = true;
