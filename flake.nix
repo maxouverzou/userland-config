@@ -10,17 +10,17 @@
     nixgl.url = "github:nix-community/nixGL";
     stylix.url = "github:nix-community/stylix";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
     {
       nixpkgs,
       home-manager,
-      nixgl,
-      stylix,
-      nix-flatpak,
       ...
-    }:
+    }@inputs:
 
     let
       supportedSystems = [
@@ -37,7 +37,7 @@
             pkgs = import nixpkgs {
               inherit system;
               overlays = [
-                nixgl.overlay
+                inputs.nixgl.overlay
                 (import ./overlays)
               ];
               config.allowUnfree = true;
@@ -56,6 +56,8 @@
           default = pkgs.mkShell {
             packages = [
               home-manager.packages.${pkgs.system}.default
+              pkgs.ssh-to-age
+              pkgs.sops
             ];
           };
         }
@@ -69,14 +71,19 @@
             home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
               modules = [
-                nix-flatpak.homeManagerModules.nix-flatpak
-                stylix.homeModules.stylix
+                inputs.nix-flatpak.homeManagerModules.nix-flatpak
+                inputs.stylix.homeModules.stylix
+                inputs.sops-nix.homeManagerModules.sops
                 ./modules
                 {
                   config = {
                     nix.gc = {
                       automatic = true;
                       persistent = true;
+                    };
+                    sops = {
+                      age.keyFile = nixpkgs.lib.mkDefault "/etc/ssh/ssh_host_ed25519_key.pub";
+                      defaultSopsFile = ./secrets/main.yaml;
                     };
                   };
                 }
@@ -99,6 +106,7 @@
                 homeDirectory = "/home/maxou";
                 stateVersion = "24.11";
               };
+              sops.age.keyFile = "/home/maxou/.config/sops/age/keys.txt";
               enableDevelopment = true;
               enableGraphical = true;
             };
