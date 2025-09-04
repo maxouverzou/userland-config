@@ -6,52 +6,57 @@
   config = {
     # The home.packages option allows you to install Nix packages into your
     # environment.
-    home.packages = with pkgs; [
-      # some custom packages
-      cfn-normalizer
-      fedit
-      frbi # interactive git rebase
-      json2yaml
-      yaml2json
+    home.packages =
+      with pkgs;
+      [
+        # some custom packages
+        cfn-normalizer
+        fedit
+        frbi # interactive git rebase
+        json2yaml
+        yaml2json
 
-      # nix development packages hwd # home-manager why-depends nh # yet another nix helper nil # nix language server
-      nix-your-shell # fish/zsh support for nix-shell
-      nh # yet another nix helper
-      nvd
+        # nix development packages hwd # home-manager why-depends nh # yet another nix helper nil # nix language server
+        nix-your-shell # fish/zsh support for nix-shell
+        nh # yet another nix helper
+        nvd
 
-      dig # dns utils
-      fd # alternative to find
-      file
-      gnutar
-      llm # access LLMs from the command-line
-      ncdu # ncurses disk usage analyzer
-      parallel # TODO is rust-parallel ready?
-      pbzip2 # parallel bzip2
-      pigz # parallel gzip
-      pixz # parallel xz
-      pv
-      rclone # sync files & directories to/from cloud
-      restic # backup program
-      rsync
-      screen
-      terminal-parrot
-      tig # text-mode interface for git
-      tmate # terminal sharing
-      unixtools.watch
-      watchman
-      whois
-      xan # process csv files
-      xxd
+        dig # dns utils
+        fd # alternative to find
+        file
+        gnutar
+        llm # access LLMs from the command-line
+        ncdu # ncurses disk usage analyzer
+        parallel # TODO is rust-parallel ready?
+        pbzip2 # parallel bzip2
+        pigz # parallel gzip
+        pixz # parallel xz
+        pv
+        rclone # sync files & directories to/from cloud
+        restic # backup program
+        rsync
+        screen
+        terminal-parrot
+        tig # text-mode interface for git
+        tmate # terminal sharing
+        unixtools.watch
+        watchman
+        whois
+        xan # process csv files
+        xxd
 
-      # TODO move these to a different category?
-      cbr2cbz
-      yubikey-personalization
+        # TODO move these to a different category?
+        cbr2cbz
+        yubikey-personalization
 
-      # nixgl.nixGLIntel
-      # nixgl.nixVulkanIntel
-      # ^ these should be used directly within patched desktop entries?
-      # ^ not needed at the moment; does not work on darwin
-    ];
+        # nixgl.nixGLIntel
+        # nixgl.nixVulkanIntel
+        # ^ these should be used directly within patched desktop entries?
+        # ^ not needed at the moment; does not work on darwin
+      ]
+      ++ lib.optionals pkgs.stdenv.isLinux [
+        ostree-interactive-deploy
+      ];
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
     # plain files is through 'home.file'.
