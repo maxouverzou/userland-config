@@ -16,6 +16,7 @@ in
 
   config = mkIf config.enableDevelopment {
     home.packages = with pkgs; [
+      gemini-cli
       nil # nix language server
       nixd # nix language server
       nixfmt-rfc-style
