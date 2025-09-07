@@ -84,6 +84,10 @@
                     sops = {
                       age.keyFile = nixpkgs.lib.mkDefault "/etc/ssh/ssh_host_ed25519_key.pub";
                       defaultSopsFile = ./secrets/main.yaml;
+                      secrets = {
+                        RCLONE_GDRIVE_CLIENT = {};
+                        RCLONE_GDRIVE_SECRET = {};
+                      };
                     };
                   };
                 }
@@ -109,6 +113,7 @@
               sops.age.keyFile = "/home/maxou/.config/sops/age/keys.txt";
               enableDevelopment = true;
               enableGraphical = true;
+              enablePersonal = true;
             };
             "maxou@wheatley" = mkHome {
               home = {
