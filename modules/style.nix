@@ -26,6 +26,7 @@ in
         gtk.enable = false; # won't this interfere w/ kde?
         kde.enable = false;
         qt.enable = false;
+        blender.enable = false;
       };
     };
   };
