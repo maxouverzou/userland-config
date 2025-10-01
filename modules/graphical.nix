@@ -42,6 +42,8 @@ in
         "org.virt_manager.virt-manager"
         "tv.plex.PlexDesktop"
 
+        "com.reqable.Reqable"
+        "org.kde.calligra"
         "com.heroicgameslauncher.hgl"
         "com.usebottles.bottles"
         "de.zwarf.picplanner"
