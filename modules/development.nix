@@ -20,6 +20,9 @@ in
       nil # nix language server
       nixd # nix language server
       nixfmt-rfc-style
+
+
+      jetbrains-toolbox
     ];
 
     programs.awscli.enable = true;
