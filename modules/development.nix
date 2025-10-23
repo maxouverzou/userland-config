@@ -21,6 +21,7 @@ in
       nixd # nix language server
       nixfmt-rfc-style
 
+      gitu
 
       jetbrains-toolbox
     ];
@@ -29,7 +30,7 @@ in
 
     programs.claude-code = {
       enable = true;
-      package = pkgs.claude-code-stable;
+      package = pkgs.claude-code;
     };
 
     programs.lazygit.enable = true;
