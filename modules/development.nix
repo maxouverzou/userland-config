@@ -34,5 +34,12 @@ in
     };
 
     programs.lazygit.enable = true;
+
+    programs.doom-emacs = {
+      enable = true;
+      doomDir = ../share/doom.d;
+    };
+
+    home.shellAliases.magit = "emacs -nw -f magit";
   };
 }
