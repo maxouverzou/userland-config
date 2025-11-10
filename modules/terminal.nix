@@ -119,16 +119,7 @@
     programs.fzf.enable = true;
     programs.git = {
       enable = true;
-      delta = {
-        enable = true;
-        options = {
-          features = "decorations";
-          naviguate = true;
-          light = false;
-          side-by-side = true;
-        };
-      };
-      extraConfig = {
+      settings = {
         init.defaultBranch = "master";
         pull.rebase = true;
       };

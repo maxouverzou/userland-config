@@ -35,6 +35,17 @@ in
 
     programs.lazygit.enable = true;
 
+    programs.delta = {
+      enable = true;
+      enableGitIntegration = true;
+      options = {
+        features = "decorations";
+        navigate = true;
+        light = false;
+        side-by-side = true;
+      };
+    };
+    
     programs.doom-emacs = {
       enable = true;
       doomDir = ../share/doom.d;
