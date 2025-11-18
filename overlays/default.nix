@@ -8,6 +8,7 @@ self: super: {
   hwd = super.callPackage ../packages/hwd.nix { };
   json2yaml = super.callPackage ../packages/json2yaml.nix { };
   ostree-interactive-deploy = super.callPackage ../packages/ostree-interactive-deploy.nix { };
+  urlencode = super.callPackage ../packages/urlencode.nix { };
   redis-cli = super.callPackage ../packages/redis-cli.nix { };
   tile-stitch = super.callPackage ../packages/tile-stitch.nix { };
   yaml2json = super.callPackage ../packages/yaml2json.nix { };
