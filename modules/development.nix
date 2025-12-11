@@ -16,14 +16,15 @@ in
 
   config = mkIf config.enableDevelopment {
     home.packages = with pkgs; [
-      gemini-cli
+      gemini-cli-bin
+      gitu
+      jetbrains-toolbox
+      jules
       nil # nix language server
       nixd # nix language server
       nixfmt-rfc-style
 
-      gitu
 
-      jetbrains-toolbox
     ];
 
     programs.awscli.enable = true;

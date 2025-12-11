@@ -7,6 +7,7 @@ self: super: {
   gpx-reduce = super.callPackage ../packages/gpx-reduce.nix { };
   hwd = super.callPackage ../packages/hwd.nix { };
   json2yaml = super.callPackage ../packages/json2yaml.nix { };
+  jules = super.callPackage ../packages/jules.nix { };
   ostree-interactive-deploy = super.callPackage ../packages/ostree-interactive-deploy.nix { };
   urlencode = super.callPackage ../packages/urlencode.nix { };
   redis-cli = super.callPackage ../packages/redis-cli.nix { };
