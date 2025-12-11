@@ -19,7 +19,6 @@ in
 
     home.packages = with pkgs; [
       _1password-gui
-      (config.lib.nixGL.wrap lobe-chat)
       veracrypt
     ];
 
