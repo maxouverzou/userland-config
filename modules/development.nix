@@ -16,23 +16,21 @@ in
 
   config = mkIf config.enableDevelopment {
     home.packages = with pkgs; [
-      gemini-cli-bin
+      amp-cli
+
       gitu
       jetbrains-toolbox
       jules
       nil # nix language server
       nixd # nix language server
       nixfmt-rfc-style
-
-
     ];
 
     programs.awscli.enable = true;
 
-    programs.claude-code = {
-      enable = true;
-      package = pkgs.claude-code;
-    };
+    programs.claude-code.enable = true;
+
+    programs.codex.enable = true;
 
     programs.lazygit.enable = true;
 
@@ -46,12 +44,11 @@ in
         side-by-side = true;
       };
     };
-    
-    programs.doom-emacs = {
-      enable = true;
-      doomDir = ../share/doom.d;
-    };
 
-    home.shellAliases.magit = "emacs -nw -f magit";
+    programs.gemini-cli = {
+      enable = true;
+      package = pkgs.gemini-cli-bin;
+    };
+    
   };
 }
