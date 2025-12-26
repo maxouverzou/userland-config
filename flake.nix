@@ -13,9 +13,6 @@
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
-
-    nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
-    nix-doom-emacs-unstraightened.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -74,7 +71,6 @@
             home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
               modules = [
-                inputs.nix-doom-emacs-unstraightened.homeModule
                 inputs.nix-flatpak.homeManagerModules.nix-flatpak
                 inputs.stylix.homeModules.stylix
                 inputs.sops-nix.homeManagerModules.sops

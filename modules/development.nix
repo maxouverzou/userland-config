@@ -48,6 +48,8 @@ in
     programs.gemini-cli = {
       enable = true;
       package = pkgs.gemini-cli-bin;
+      # TODO: configure sandbox
+      # GEMINI_SANDBOX=podman GEMINI_SANDBOX_IMAGE=us-docker.pkg.dev/gemini-code-dev/gemini-cli/sandbox:0.22.1 SANDBOX_FLAGS="--security-opt label=disable" gemini --sandbox
     };
     
   };
