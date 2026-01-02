@@ -17,6 +17,7 @@ in
   config = mkIf config.enableDevelopment {
     home.packages = with pkgs; [
       amp-cli
+      code
 
       gitu
       jetbrains-toolbox
