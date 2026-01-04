@@ -25,7 +25,7 @@
         fd # alternative to find
         file
         gnutar
-        llm # access LLMs from the command-line
+        # llm # access LLMs from the command-line
         ncdu # ncurses disk usage analyzer
         parallel # TODO is rust-parallel ready?
         pbzip2 # parallel bzip2

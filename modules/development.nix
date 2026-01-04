@@ -30,6 +30,7 @@ in
     programs.awscli.enable = true;
 
     programs.claude-code.enable = true;
+    # https://github.com/obra/superpowers
 
     programs.codex.enable = true;
 
