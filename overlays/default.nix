@@ -1,5 +1,6 @@
 self: super: {
   cbr2cbz = super.callPackage ../packages/cbr2cbz.nix { };
+  ccstatusline = super.callPackage ../packages/ccstatusline/default.nix { };
   cfn-normalizer = super.callPackage ../packages/cfn-normalize.nix { };
   claude-code-stable = super.callPackage ../packages/claude-code.nix { };
   fedit = super.callPackage ../packages/fedit.nix { };
