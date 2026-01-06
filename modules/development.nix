@@ -19,7 +19,10 @@ in
       amp-cli
       code
       ccstatusline
+      nlm
       notebooklm-mcp
+      opencode
+      nodejs # needed to handle skills in opencode/codex
 
       gitu
       jetbrains-toolbox
