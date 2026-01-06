@@ -9,6 +9,7 @@ self: super: {
   hwd = super.callPackage ../packages/hwd.nix { };
   json2yaml = super.callPackage ../packages/json2yaml.nix { };
   notebooklm-mcp = super.callPackage ../packages/notebooklm-mcp/default.nix { };
+  mcp-cmd = super.callPackage ../packages/mcp-cmd/default.nix { };
   jules = super.callPackage ../packages/jules.nix { };
   nlm = super.callPackage ../packages/nlm.nix { };
   ostree-interactive-deploy = super.callPackage ../packages/ostree-interactive-deploy.nix { };
