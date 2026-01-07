@@ -19,7 +19,7 @@ in
       amp-cli
       code
       ccstatusline
-      nlm
+      mcp-cmd
       notebooklm-mcp
       opencode
       nodejs # needed to handle skills in opencode/codex
