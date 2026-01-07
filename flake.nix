@@ -56,6 +56,7 @@
           default = pkgs.mkShell {
             packages = [
               home-manager.packages.${pkgs.system}.default
+              pkgs.node2nix
               pkgs.ssh-to-age
               pkgs.sops
             ];
