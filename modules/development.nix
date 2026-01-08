@@ -34,23 +34,7 @@ in
 
     programs.awscli.enable = true;
 
-    programs.claude-code = {
-      enable = true;
-      settings = {
-        env = {
-          CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL = 1;
-        };
-        includeCoAuthoredBy = false;
-        enabledPlugins = {
-          "superpowers@superpowers-marketplace" = true;
-          "elements-of-style@superpowers-marketplace" = true;
-        };
-        statusLine = {
-          "type" = "command";
-          "command" = "${pkgs.ccstatusline}/bin/ccstatusline";
-        };
-      };
-    };
+    programs.claude-code.enable = true;
 
     programs.codex.enable = true;
 
