@@ -31,7 +31,7 @@ in
       hurl
       nil # nix language server
       nixd # nix language server
-      nixfmt-rfc-style
+      nixfmt
     ];
 
     programs.awscli.enable = true;
