@@ -3,6 +3,7 @@ self: super: {
   ccstatusline = super.callPackage ../packages/ccstatusline/default.nix { };
   cfn-normalizer = super.callPackage ../packages/cfn-normalize.nix { };
   claude-code-stable = super.callPackage ../packages/claude-code.nix { };
+  devcontainer-standalone = super.callPackage ../packages/devcontainer-standalone.nix { };
   fedit = super.callPackage ../packages/fedit.nix { };
   frbi = super.callPackage ../packages/frbi.nix { };
   gpx-reduce = super.callPackage ../packages/gpx-reduce.nix { };

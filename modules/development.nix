@@ -24,6 +24,7 @@ in
       opencode
       nodejs # needed to handle skills in opencode/codex
 
+      devcontainer-standalone
       gitu
       jetbrains-toolbox
       jules
