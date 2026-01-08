@@ -28,6 +28,7 @@ in
       gitu
       jetbrains-toolbox
       jules
+      hurl
       nil # nix language server
       nixd # nix language server
       nixfmt-rfc-style
