@@ -6,7 +6,7 @@
 
 stdenv.mkDerivation rec {
   pname = "jules";
-  version = "0.1.41";
+  version = "0.1.42";
 
   src =
     let
@@ -26,7 +26,7 @@ stdenv.mkDerivation rec {
     in
     fetchurl {
       url = "https://storage.googleapis.com/jules-cli/v${version}/jules_external_v${version}_${goPlatform}_${goArch}.tar.gz";
-      sha256 = "sha256-JTayZhifJPmaEkHpUZ2XTCmrD2ZCtIRy8pMDhpihf/E=";
+      sha256 = "sha256-c869LI+Jubsk703MuM15Q8y2npmzfeJnwvV5Mjen0QM=";
     };
 
   installPhase = ''
