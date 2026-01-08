@@ -1,9 +1,17 @@
 # userland-config
 
 ```bash
+# update locally
 nh home switch ~/.config/home-manager
 
+# update remotely
 nix-shell -p nh --run "nh home switch github:maxouverzou/userland-config -- --refresh"
+
+# list direct dependencies
+nix-store --query --references $(which devcontainer)
+
+# build a custom package
+nix-build -E "with import <nixpkgs> { overlays = [ (import ./overlays) ]; }; my-package"
 ```
 
 ## Troubleshooting
