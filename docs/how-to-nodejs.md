@@ -52,14 +52,15 @@ This directory contains custom Nix packages for Home Manager. Below are the inst
     ```
     *Replace `my-node-app` with the actual package name defined in step 2.*
 
-5.  **Register in Overlay**
-    Add the new package to `overlays/default.nix` to make it available to Home Manager.
+5.  **Register in Packages Set**
+    Add the new package to `packages/default.nix` so it is exposed both via the overlay and flake outputs.
 
     ```nix
-    # overlays/default.nix
-    self: super: {
+    # packages/default.nix
+    { pkgs }:
+    {
       # ... existing packages
-      my-node-app = super.callPackage ../packages/my-node-app/default.nix { };
+      my-node-app = pkgs.callPackage ./my-node-app/default.nix { };
     }
     ```
 
@@ -67,7 +68,7 @@ This directory contains custom Nix packages for Home Manager. Below are the inst
     Verify the build before committing.
 
     ```bash
-    nix-build -E "with import <nixpkgs> { overlays = [ (import ./overlays) ]; }; my-node-app"
+    nix build .#my-node-app
     ./result/bin/my-node-app --help
     rm result
     ```

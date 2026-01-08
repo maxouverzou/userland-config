@@ -29,23 +29,52 @@
         "x86_64-darwin"
         "aarch64-darwin"
       ];
+      mkPkgs =
+        system:
+        import nixpkgs {
+          inherit system;
+          overlays = [
+            inputs.nixgl.overlay
+            (import ./overlays)
+          ];
+          config.allowUnfree = true;
+          config.allowUnsupportedSystem = false;
+          config.allowBroken = false;
+        };
       forEachSupportedSystem =
         f:
         nixpkgs.lib.genAttrs supportedSystems (
           system:
-          f {
-            pkgs = import nixpkgs {
-              inherit system;
-              overlays = [
-                inputs.nixgl.overlay
-                (import ./overlays)
-              ];
-              config.allowUnfree = true;
-              config.allowUnsupportedSystem = false;
-              config.allowBroken = false;
-            };
-          }
+          f { pkgs = mkPkgs system; }
         );
+      mkHome =
+        system: cfg:
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = mkPkgs system;
+          modules = [
+            inputs.nix-flatpak.homeManagerModules.nix-flatpak
+            inputs.stylix.homeModules.stylix
+            inputs.sops-nix.homeManagerModules.sops
+            ./modules
+            {
+              config = {
+                nix.gc = {
+                  automatic = true;
+                  persistent = true;
+                };
+                sops = {
+                  age.keyFile = nixpkgs.lib.mkDefault "/etc/ssh/ssh_host_ed25519_key.pub";
+                  defaultSopsFile = ./secrets/main.yaml;
+                  secrets = {
+                    RCLONE_GDRIVE_CLIENT = { };
+                    RCLONE_GDRIVE_SECRET = { };
+                  };
+                };
+              };
+            }
+            cfg
+          ];
+        };
     in
     {
       formatter = forEachSupportedSystem ({ pkgs }: pkgs.nixfmt-tree);
@@ -66,73 +95,43 @@
 
       packages = forEachSupportedSystem (
         { pkgs }:
-        let
-          mkHome =
-            cfg:
-            home-manager.lib.homeManagerConfiguration {
-              inherit pkgs;
-              modules = [
-                inputs.nix-flatpak.homeManagerModules.nix-flatpak
-                inputs.stylix.homeModules.stylix
-                inputs.sops-nix.homeManagerModules.sops
-                ./modules
-                {
-                  config = {
-                    nix.gc = {
-                      automatic = true;
-                      persistent = true;
-                    };
-                    sops = {
-                      age.keyFile = nixpkgs.lib.mkDefault "/etc/ssh/ssh_host_ed25519_key.pub";
-                      defaultSopsFile = ./secrets/main.yaml;
-                      secrets = {
-                        RCLONE_GDRIVE_CLIENT = {};
-                        RCLONE_GDRIVE_SECRET = {};
-                      };
-                    };
-                  };
-                }
-                cfg
-              ];
-            };
-        in
-        {
-          homeConfigurations = {
-            "maxou@gertry" = mkHome {
-              home = {
-                username = "maxou";
-                homeDirectory = "/home/maxou";
-                stateVersion = "24.11";
-              };
-            };
-            "maxou@glados" = mkHome {
-              home = {
-                username = "maxou";
-                homeDirectory = "/home/maxou";
-                stateVersion = "24.11";
-              };
-              sops.age.keyFile = "/home/maxou/.config/sops/age/keys.txt";
-              enableDevelopment = true;
-              enableGraphical = true;
-              enablePersonal = true;
-            };
-            "maxou@wheatley" = mkHome {
-              home = {
-                username = "maxou";
-                homeDirectory = "/home/maxou";
-                stateVersion = "20.09";
-              };
-            };
-            "maxverzier@mverzier-laptop-00495" = mkHome {
-              home = {
-                username = "maxverzier";
-                homeDirectory = "/Users/maxverzier";
-                stateVersion = "25.05";
-              };
-              enableDevelopment = true;
-            };
-          };
-        }
+        import ./packages { inherit pkgs; }
       );
+
+      homeConfigurations = {
+        "maxou@gertry" = mkHome "x86_64-linux" {
+          home = {
+            username = "maxou";
+            homeDirectory = "/home/maxou";
+            stateVersion = "24.11";
+          };
+        };
+        "maxou@glados" = mkHome "x86_64-linux" {
+          home = {
+            username = "maxou";
+            homeDirectory = "/home/maxou";
+            stateVersion = "24.11";
+          };
+          sops.age.keyFile = "/home/maxou/.config/sops/age/keys.txt";
+          enableDevelopment = true;
+          enableGraphical = true;
+          enablePersonal = true;
+        };
+        "maxou@wheatley" = mkHome "x86_64-linux" {
+          home = {
+            username = "maxou";
+            homeDirectory = "/home/maxou";
+            stateVersion = "20.09";
+          };
+        };
+        "maxverzier@mverzier-laptop-00495" = mkHome "aarch64-darwin" {
+          home = {
+            username = "maxverzier";
+            homeDirectory = "/Users/maxverzier";
+            stateVersion = "25.05";
+          };
+          enableDevelopment = true;
+        };
+      };
     };
 }
