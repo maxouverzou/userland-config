@@ -32,6 +32,7 @@ in
       nil # nix language server
       nixd # nix language server
       nixfmt
+      serena
     ];
 
     programs.awscli.enable = true;
