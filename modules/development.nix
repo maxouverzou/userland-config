@@ -26,6 +26,7 @@ in
 
       devcontainer-standalone
       gitu
+      gemini-podman
       jetbrains-toolbox
       jules
       hurl
