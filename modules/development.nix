@@ -24,6 +24,8 @@ in
       opencode
       nodejs # needed to handle skills in opencode/codex
 
+      uv
+
       devcontainer-standalone
       gitu
       gemini-podman
