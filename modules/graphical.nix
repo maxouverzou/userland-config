@@ -49,6 +49,8 @@ in
         "de.zwarf.picplanner"
         "io.github.ciromattia.kcc"
         "com.calibre_ebook.calibre"
+
+        "io.mpv.Mpv"
       ];
     };
 
@@ -59,9 +61,8 @@ in
       };
     };
 
-    programs.mpv = {
-      enable = true;
-      package = (config.lib.nixGL.wrap pkgs.mpv);
+    programs.fish.shellAliases = {
+      mpv = "flatpak run io.mpv.Mpv";
     };
 
   };
