@@ -56,6 +56,7 @@ in
 
     programs.foot = {
       enable = pkgs.stdenv.isLinux;
+      package = pkgs.emptyDirectory;
       settings = {
         main.shell = "fish";
       };
