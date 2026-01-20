@@ -16,6 +16,11 @@
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-ai-bubbles = {
+      url = "github:maxouverzou/nix-ai-bubbles";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -37,6 +42,7 @@
         import nixpkgs {
           inherit system;
           overlays = [
+            inputs.nix-ai-bubbles.overlays.default
             inputs.nixgl.overlay
             (final: prev: {
               serena = inputs.serena.packages.${system}.default;

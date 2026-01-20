@@ -24,6 +24,10 @@ in
       opencode
       nodejs # needed to handle skills in opencode/codex
 
+      claude-code-jailed
+      opencode-jailed
+      gemini-cli-bin-jailed
+      
       uv
 
       devcontainer-standalone
