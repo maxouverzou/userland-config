@@ -3,6 +3,7 @@
   cbr2cbz = pkgs.callPackage ./cbr2cbz.nix { };
   ccstatusline = pkgs.callPackage ./ccstatusline/default.nix { };
   cfn-normalizer = pkgs.callPackage ./cfn-normalize.nix { };
+  chrome-devtools-mcp = pkgs.callPackage ./chrome-devtools-mcp/default.nix { };
   claude-code-stable = pkgs.callPackage ./claude-code.nix { };
   devcontainer-standalone = pkgs.callPackage ./devcontainer-standalone.nix { };
   fedit = pkgs.callPackage ./fedit.nix { };
