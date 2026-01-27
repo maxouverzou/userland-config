@@ -21,6 +21,10 @@
       url = "github:maxouverzou/nix-ai-bubbles";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    bun2nix.url = "github:nix-community/bun2nix";
+    bun2nix.inputs.nixpkgs.follows = "nixpkgs";
+    
   };
 
   outputs =
@@ -42,6 +46,7 @@
         import nixpkgs {
           inherit system;
           overlays = [
+            inputs.bun2nix.overlays.default
             inputs.nix-ai-bubbles.overlays.default
             inputs.nixgl.overlay
             (final: prev: {
@@ -100,6 +105,9 @@
               pkgs.node2nix
               pkgs.ssh-to-age
               pkgs.sops
+
+              pkgs.bun
+              inputs.bun2nix.packages.${pkgs.system}.default
             ];
           };
         }
