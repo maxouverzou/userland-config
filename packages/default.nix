@@ -8,6 +8,7 @@
   devcontainer-standalone = pkgs.callPackage ./devcontainer-standalone.nix { };
   fedit = pkgs.callPackage ./fedit.nix { };
   frbi = pkgs.callPackage ./frbi.nix { };
+  gitu = pkgs.callPackage ./gitu.nix { };
   gemini-podman = pkgs.callPackage ./gemini-podman.nix { };
   gpx-reduce = pkgs.callPackage ./gpx-reduce.nix { };
   hwd = pkgs.callPackage ./hwd.nix { };
