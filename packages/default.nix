@@ -17,6 +17,7 @@
   jules = pkgs.callPackage ./jules.nix { };
   nlm = pkgs.callPackage ./nlm.nix { };
   ostree-interactive-deploy = pkgs.callPackage ./ostree-interactive-deploy.nix { };
+  pi-coding-agent = pkgs.callPackage ./pi-coding-agent/default.nix { };
   qmd = pkgs.callPackage ./qmd/default.nix { };
   urlencode = pkgs.callPackage ./urlencode.nix { };
   redis-cli = pkgs.callPackage ./redis-cli.nix { };
