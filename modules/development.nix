@@ -23,6 +23,7 @@ in
       notebooklm-mcp
       serena
       jules
+      pi-coding-agent
       
       # ad-hoc mcp servers need these
       nodejs
