@@ -1,6 +1,7 @@
 { pkgs }:
 {
   cbr2cbz = pkgs.callPackage ./cbr2cbz.nix { };
+  cclimits = pkgs.callPackage ./cclimits.nix { };
   ccstatusline = pkgs.callPackage ./ccstatusline/default.nix { };
   cfn-normalizer = pkgs.callPackage ./cfn-normalize.nix { };
   chrome-devtools-mcp = pkgs.callPackage ./chrome-devtools-mcp/default.nix { };
