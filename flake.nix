@@ -102,10 +102,14 @@
           default = pkgs.mkShell {
             packages = [
               home-manager.packages.${pkgs.system}.default
-              pkgs.node2nix
+
               pkgs.ssh-to-age
               pkgs.sops
 
+              pkgs.nix-prefetch-git
+              pkgs.nix-prefetch-github
+
+              pkgs.node2nix
               pkgs.bun
               inputs.bun2nix.packages.${pkgs.system}.default
             ];
