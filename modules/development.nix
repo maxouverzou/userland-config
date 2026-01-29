@@ -21,9 +21,7 @@ in
       chrome-devtools-mcp
       mcp-cmd
       notebooklm-mcp
-      serena
       jules
-      pi-coding-agent
       
       # ad-hoc mcp servers need these
       nodejs
@@ -73,7 +71,7 @@ in
       extensions = with pkgs.piExtensions; [
         tools
         plan-mode
-        sandbox
+        # sandbox
       ];
       skills = with pkgs.piSkills; [
         # conductor-setup

@@ -11,9 +11,6 @@
     stylix.url = "github:nix-community/stylix";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
-    serena.url = "github:oraios/serena";
-    serena.inputs.nixpkgs.follows = "nixpkgs";
-
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -53,9 +50,6 @@
             inputs.nix-ai-bubbles.overlays.default
             inputs.pi-distribution.overlays.default
             inputs.nixgl.overlay
-            (final: prev: {
-              serena = inputs.serena.packages.${system}.default;
-            })
             (import ./overlays)
           ];
           config.allowUnfree = true;
