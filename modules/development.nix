@@ -67,6 +67,22 @@ in
       enable = true;
       package = pkgs.gemini-cli-bin;
     };
+
+    programs.pi = {
+      enable = true;
+      extensions = with pkgs.piExtensions; [
+        tools
+        plan-mode
+        sandbox
+      ];
+      skills = with pkgs.piSkills; [
+        # conductor-setup
+        # conductor-implement
+        # conductor-new-track
+        # conductor-status
+        # conductor-revert
+      ];
+    };
     
   };
 }

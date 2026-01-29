@@ -22,6 +22,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    pi-distribution.url = "github:maxouverzou/pi-distribution";
+    pi-distribution.inputs.nixpkgs.follows = "nixpkgs";
+
     bun2nix.url = "github:nix-community/bun2nix";
     bun2nix.inputs.nixpkgs.follows = "nixpkgs";
     
@@ -48,6 +51,7 @@
           overlays = [
             inputs.bun2nix.overlays.default
             inputs.nix-ai-bubbles.overlays.default
+            inputs.pi-distribution.overlays.default
             inputs.nixgl.overlay
             (final: prev: {
               serena = inputs.serena.packages.${system}.default;
@@ -72,6 +76,7 @@
             inputs.nix-flatpak.homeManagerModules.nix-flatpak
             inputs.stylix.homeModules.stylix
             inputs.sops-nix.homeManagerModules.sops
+            inputs.pi-distribution.homeManagerModules.default
             ./modules
             {
               config = {
