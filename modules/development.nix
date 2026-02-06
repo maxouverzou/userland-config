@@ -32,6 +32,12 @@ in
       claude-code-jailed
       opencode-jailed
       gemini-cli-bin-jailed
+      (mkBwrapJail {
+        package = pi-coding-agent;
+        bwrapFlags = [
+          ''--bind "$HOME/.pi" "$HOME/.pi"''
+        ];
+      })
       
       devcontainer-standalone
       gitu
@@ -72,13 +78,18 @@ in
         tools
         plan-mode
         # sandbox
+        limits
+      ];
+      prompts = with pkgs.piPrompts; [
+        git-commit
       ];
       skills = with pkgs.piSkills; [
-        # conductor-setup
-        # conductor-implement
-        # conductor-new-track
-        # conductor-status
-        # conductor-revert
+        conductor.conductor-setup
+        conductor.conductor-implement
+        conductor.conductor-new-track
+        conductor.conductor-status
+        conductor.conductor-revert
+        browser.browser-tools
       ];
     };
     
