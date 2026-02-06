@@ -25,6 +25,7 @@
         fd # alternative to find
         file
         gnutar
+        gping
         # llm # access LLMs from the command-line
         ncdu # ncurses disk usage analyzer
         parallel # TODO is rust-parallel ready?
@@ -166,6 +167,7 @@
     };
     programs.yt-dlp.enable = true;
     programs.zellij.enable = true;
+    programs.zoxide.enable = true;
     programs.zsh.enable = pkgs.stdenv.isDarwin;
 
     services.syncthing.enable = true;
