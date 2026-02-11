@@ -14,6 +14,7 @@
         fedit
         frbi # interactive git rebase
         json2yaml
+        resume-markdown
         yaml2json
 
         # nix development packages hwd # home-manager why-depends nh # yet another nix helper nil # nix language server
