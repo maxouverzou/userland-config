@@ -39,6 +39,7 @@ in
         ];
       })
 
+      allure
       git-traverse      
       devcontainer-standalone
       gitu
