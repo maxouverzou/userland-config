@@ -38,7 +38,8 @@ in
           ''--bind "$HOME/.pi" "$HOME/.pi"''
         ];
       })
-      
+
+      git-traverse      
       devcontainer-standalone
       gitu
       jetbrains-toolbox

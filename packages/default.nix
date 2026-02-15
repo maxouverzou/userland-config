@@ -11,6 +11,7 @@
   frbi = pkgs.callPackage ./frbi.nix { };
   gitu = pkgs.callPackage ./gitu.nix { };
   gemini-podman = pkgs.callPackage ./gemini-podman.nix { };
+  git-traverse = pkgs.callPackage ./git-traverse.nix { };
   gpx-reduce = pkgs.callPackage ./gpx-reduce.nix { };
   hwd = pkgs.callPackage ./hwd.nix { };
   json2yaml = pkgs.callPackage ./json2yaml.nix { };
