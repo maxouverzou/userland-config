@@ -25,6 +25,7 @@
   urlencode = pkgs.callPackage ./urlencode.nix { };
   redis-cli = pkgs.callPackage ./redis-cli.nix { };
   resume-markdown = pkgs.callPackage ./resume-markdown.nix { };
+  skills = pkgs.callPackage ./skills/default.nix { };
   tile-stitch = pkgs.callPackage ./tile-stitch.nix { };
   yaml2json = pkgs.callPackage ./yaml2json.nix { };
 }

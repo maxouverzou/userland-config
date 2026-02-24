@@ -22,6 +22,7 @@ in
       mcp-cmd
       notebooklm-mcp
       jules
+      skills
       
       # ad-hoc mcp servers need these
       nodejs
