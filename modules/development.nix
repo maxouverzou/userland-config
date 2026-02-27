@@ -19,8 +19,6 @@ in
       # llm tools
       ccstatusline
       chrome-devtools-mcp
-      mcp-cmd
-      notebooklm-mcp
       jules
       skills
       

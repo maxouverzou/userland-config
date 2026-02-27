@@ -16,8 +16,6 @@
   hwd = pkgs.callPackage ./hwd.nix { };
   json2yaml = pkgs.callPackage ./json2yaml.nix { };
   mcporter = pkgs.callPackage ./mcporter/default.nix { };
-  notebooklm-mcp = pkgs.callPackage ./notebooklm-mcp/default.nix { };
-  mcp-cmd = pkgs.callPackage ./mcp-cmd/default.nix { };
   jules = pkgs.callPackage ./jules.nix { };
   nlm = pkgs.callPackage ./nlm.nix { };
   ostree-interactive-deploy = pkgs.callPackage ./ostree-interactive-deploy.nix { };
