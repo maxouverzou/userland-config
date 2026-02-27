@@ -48,6 +48,10 @@
         xan # process csv files
         xxd
 
+        taskwarrior3
+        tasksh
+        vit
+
         # TODO move these to a different category?
         cbr2cbz
         yubikey-personalization
