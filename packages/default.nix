@@ -1,5 +1,6 @@
 { pkgs }:
 {
+  boxlite = pkgs.callPackage ./boxlite.nix { };
   cbr2cbz = pkgs.callPackage ./cbr2cbz.nix { };
   cclimits = pkgs.callPackage ./cclimits.nix { };
   ccstatusline = pkgs.callPackage ./ccstatusline/default.nix { };

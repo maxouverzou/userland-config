@@ -38,6 +38,8 @@ in
         ];
       })
 
+      boxlite
+
       allure
       git-traverse      
       # devcontainer-standalone
