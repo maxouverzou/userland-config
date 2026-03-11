@@ -41,6 +41,7 @@
         terminal-parrot
         tig # text-mode interface for git
         tmate # terminal sharing
+        tmux
         urlencode
         unixtools.watch
         watchman

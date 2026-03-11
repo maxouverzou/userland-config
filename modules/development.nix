@@ -40,7 +40,7 @@ in
 
       allure
       git-traverse      
-      devcontainer-standalone
+      # devcontainer-standalone
       gitu
       jetbrains-toolbox
       hurl
