@@ -39,6 +39,7 @@ in
       })
 
       boxlite
+      promptfoo
 
       allure
       git-traverse      
